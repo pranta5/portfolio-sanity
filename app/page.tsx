@@ -15,19 +15,17 @@ export const metadata: Metadata = {
     title: "About Pranta Das-Web Developer",
     description: "Discover the skills and expertise of Pranta Das, a web developer and designer.",
     url: `${process.env.NEXT_PUBLIC_SITE_URL}`,
-    images: [{ url: `${process.env.NEXT_PUBLIC_SITE_URL}/assests/home-page.png`, width: 800, height: 600, alt: "Pranta Das" }],
+    images: `${process.env.NEXT_PUBLIC_SITE_URL}/assests/home-page.png`,
     type: "profile",
   },
 }
 
 export default async function Home() {
   const profile: ProfileType[] = await getProfile();
-
-    const words = ["Developer", "Designer","Explorer","Traveler"];
-
-    console.log("url", process.env.NEXT_PUBLIC_SITE_URL);
-    
-
+  
+  const words = ["Developer", "Designer","Explorer","Traveler"];    
+  
+  // console.log("url", process.env.NEXT_PUBLIC_SITE_URL+"/assests/home-page.png");
   return (
     <main className=" mx-auto lg:px-16 px-6">
       <Head>
