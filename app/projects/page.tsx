@@ -7,16 +7,30 @@ import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Projects | Pranta Das - Web Developer",
-  description: "Discover the projects that Pranta Das has built over the years.",
-  keywords: ["Pranta Das", "Web Developer", "Reactjs Developer", "Frontend Engineer"],
+  description:
+    "Discover the projects that Pranta Das has built over the years.",
+  keywords: [
+    "Pranta Das",
+    "Web Developer",
+    "Reactjs Developer",
+    "Frontend Engineer",
+  ],
   openGraph: {
     title: "Projects by Pranta Das-Web Developer",
-    description: "Discover the projects that Pranta Das has built over the years.",
-    url:`${process.env.NEXT_PUBLIC_SITE_URL}/projects`,
-    images: [{ url: `${process.env.NEXT_PUBLIC_SITE_URL}/assests/home-page.png`, width: 800, height: 600, alt: "Pranta Das" }],
+    description:
+      "Discover the projects that Pranta Das has built over the years.",
+    url: `${process.env.NEXT_PUBLIC_SITE_URL}/projects`,
+    images: [
+      {
+        url: `${process.env.NEXT_PUBLIC_SITE_URL}/assests/home-page.png`,
+        width: 800,
+        height: 600,
+        alt: "Pranta Das",
+      },
+    ],
     type: "profile",
-  }
-}
+  },
+};
 
 export default async function Project() {
   const projects: ProjectType[] = await getProjects();
@@ -30,16 +44,17 @@ export default async function Project() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              "name": "Pranta Das",
-              "jobTitle": "Web Developer",
-              "description": "Web Developer specializing in React, Next.js, and frontend development.",
-              "url": `${process.env.NEXT_PUBLIC_SITE_URL}/projects`,
-              "image": `${process.env.NEXT_PUBLIC_SITE_URL}/assests/home-page.png`,
-              "sameAs": [
-                "https://www.linkedin.com/in/prantadas",
-                "https://www.github.com/prantadas",
-              ]
-            })
+              name: "Pranta Das",
+              jobTitle: "Web Developer",
+              description:
+                "Web Developer specializing in React, Next.js, and frontend development.",
+              url: `${process.env.NEXT_PUBLIC_SITE_URL}/projects`,
+              image: `${process.env.NEXT_PUBLIC_SITE_URL}/assests/home-page.png`,
+              sameAs: [
+                "https://www.linkedin.com/in/pranta-das-381697261/",
+                "https://www.github.com/pranta5",
+              ],
+            }),
           }}
         />
       </Head>
@@ -58,28 +73,23 @@ export default async function Project() {
 
       <section className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mb-12">
         {projects.map((project) => (
-          <Link
-            href={`/projects/${project.slug}`}
-            key={project._id}
-          >
+          <Link href={`/projects/${project.slug}`} key={project._id}>
             <div className=" grid grid-cols-1 md:grid-cols-2 gap-x-2 items-center rounded-lg p-2 bg-zinc-800 hover:bg-zinc-700 transition duration-500 ease-in-out">
               <div className="flex justify-center">
-              <Image
-              src={project.logo}
-              width={300}
-              height={120}
-              alt={project.name}
-              className="bg-zinc-800 rounded-md p-4"
-            />
+                <Image
+                  src={project.logo}
+                  width={300}
+                  height={120}
+                  alt={project.name}
+                  className="bg-zinc-800 rounded-md p-4"
+                />
               </div>
 
-            <div className=" flex flex-col gap-1 text-center">
-              <h2 className="font-semibold mb-1">{project.name}</h2>
-              <div className="text-sm text-zinc-400">{project.tagline}</div>
+              <div className=" flex flex-col gap-1 text-center">
+                <h2 className="font-semibold mb-1">{project.name}</h2>
+                <div className="text-sm text-zinc-400">{project.tagline}</div>
+              </div>
             </div>
-
-            </div>
-
           </Link>
         ))}
       </section>

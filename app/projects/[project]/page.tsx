@@ -13,7 +13,7 @@ type Props = {
 
 // Metadata generation - must be async and await params
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { project: slug } = await params; 
+  const { project: slug } = await params;
   const project: ProjectType = await getSingleProject(slug);
 
   return {
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 // Server Component - must be async and await params
 export default async function Project({ params }: Props) {
-  const { project: slug } = await params; 
+  const { project: slug } = await params;
   const project: ProjectType = await getSingleProject(slug);
 
   return (
@@ -50,8 +50,8 @@ export default async function Project({ params }: Props) {
               url: `${process.env.NEXT_PUBLIC_SITE_URL}/projects/${slug}`,
               image: `${process.env.NEXT_PUBLIC_SITE_URL}/assests/home-page.png`,
               sameAs: [
-                "https://www.linkedin.com/in/prantadas",
-                "https://www.github.com/prantadas",
+                "https://www.linkedin.com/in/pranta-das-381697261/",
+                "https://www.github.com/pranta5",
               ],
             }),
           }}

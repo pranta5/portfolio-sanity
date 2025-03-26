@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import { getProfile } from "@/sanity/sanity.query";
 import type { ProfileType } from "@/types";
@@ -10,17 +9,31 @@ import { Metadata } from "next";
 import Head from "next/head";
 
 export const metadata: Metadata = {
-  title:"About | Pranta Das - Web Developer",
-  description:"I'm Pranta Das, a web developer and designer. I live in kolkata, india, where I design the future.",
-  keywords:["Pranta Das", "Web Developer", "Reactjs Developer", "Frontend Engineer"],
-  openGraph:{
-    title:"About Pranta Das-Web Developer",
-    description : "Discover the skills and expertise of Pranta Das, a web developer and designer.",
-    url:`${process.env.NEXT_PUBLIC_SITE_URL}/about`,
-    images:[{url:`${process.env.NEXT_PUBLIC_SITE_URL}/assests/home-page.png`, width:800, height:600, alt:"Pranta Das"}],
-    type:"profile",
-  }
-}
+  title: "About | Pranta Das - Web Developer",
+  description:
+    "I'm Pranta Das, a web developer and designer. I live in kolkata, india, where I design the future.",
+  keywords: [
+    "Pranta Das",
+    "Web Developer",
+    "Reactjs Developer",
+    "Frontend Engineer",
+  ],
+  openGraph: {
+    title: "About Pranta Das-Web Developer",
+    description:
+      "Discover the skills and expertise of Pranta Das, a web developer and designer.",
+    url: `${process.env.NEXT_PUBLIC_SITE_URL}/about`,
+    images: [
+      {
+        url: `${process.env.NEXT_PUBLIC_SITE_URL}/assests/home-page.png`,
+        width: 800,
+        height: 600,
+        alt: "Pranta Das",
+      },
+    ],
+    type: "profile",
+  },
+};
 
 export default async function About() {
   const profile: ProfileType[] = await getProfile();
@@ -28,22 +41,24 @@ export default async function About() {
   return (
     <main className="lg:max-w-7xl mx-auto max-w-3xl md:px-16 px-6">
       <Head>
-        <script type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Pranta Das",
-            "jobTitle": "Web Developer",
-            "description": "Web Developer specializing in React, Next.js, and frontend development.",
-            "url": `${process.env.NEXT_PUBLIC_SITE_URL}/about`,
-            "image":`${process.env.NEXT_PUBLIC_SITE_URL}/assests/home-page.png`,
-            "sameAs": [
-              "https://www.linkedin.com/in/pranta-das-381697261/",
-              "https://www.github.com/pranta5",
-            ]
-          })
-        }}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Pranta Das",
+              jobTitle: "Web Developer",
+              description:
+                "Web Developer specializing in React, Next.js, and frontend development.",
+              url: `${process.env.NEXT_PUBLIC_SITE_URL}/about`,
+              image: `${process.env.NEXT_PUBLIC_SITE_URL}/assests/home-page.png`,
+              sameAs: [
+                "https://www.linkedin.com/in/pranta-das-381697261/",
+                "https://www.github.com/pranta5",
+              ],
+            }),
+          }}
         />
       </Head>
       {profile &&

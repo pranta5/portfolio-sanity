@@ -25,6 +25,9 @@ export default async function Home() {
 
     const words = ["Developer", "Designer","Explorer","Traveler"];
 
+    console.log("url", process.env.NEXT_PUBLIC_SITE_URL);
+    
+
   return (
     <main className=" mx-auto lg:px-16 px-6">
       <Head>
@@ -39,8 +42,8 @@ export default async function Home() {
             "url": `${process.env.NEXT_PUBLIC_SITE_URL}`,
             "image": `${process.env.NEXT_PUBLIC_SITE_URL}/assests/home-page.png`,
             "sameAs": [
-              "https://www.linkedin.com/in/prantadas",
-              "https://www.github.com/prantadas",
+              "https://www.linkedin.com/in/pranta-das-381697261/",
+              "https://www.github.com/pranta5",
             ]
           })
         }}
