@@ -6,21 +6,21 @@ import { PortableText } from "@portabletext/react";
 import fallBackImage from "@/public/project.jpg";
 import Head from "next/head";
 
+// Define props type
 type Props = {
-  params: Record<string, string>;
+  params: Promise<{ project: string }>; // Promise for async params
 };
 
-
-// Dynamic metadata for SEO
+// Metadata generation - must be async and await params
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { project: slug } = params; // Destructure params properly
+  const { project: slug } = await params; 
   const project: ProjectType = await getSingleProject(slug);
 
   return {
     title: `${project.name} | Project`,
     description: project.tagline,
     openGraph: {
-      images: project.coverImage?.image || fallBackImage.src, // Use fallback image
+      images: project.coverImage?.image || fallBackImage.src,
       title: project.name,
       description: project.tagline,
       type: "article",
@@ -29,30 +29,32 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+// Server Component - must be async and await params
 export default async function Project({ params }: Props) {
-  if (!params?.project) return <div>Project not found</div>
-  const { project: slug } = params; // Destructure params properly
+  const { project: slug } = await params; 
   const project: ProjectType = await getSingleProject(slug);
 
   return (
     <main className="max-w-6xl mx-auto lg:px-16 px-8">
-<Head>
-        <script type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Pranta Das",
-            "jobTitle": "Web Developer",
-            "description": "Web Developer specializing in React, Next.js, and frontend development.",
-            "url": `${process.env.NEXT_PUBLIC_SITE_URL}/projects/${slug}`,
-            "image": `${process.env.NEXT_PUBLIC_SITE_URL}/assests/home-page.png`,
-            "sameAs": [
-              "https://www.linkedin.com/in/prantadas",
-              "https://www.github.com/prantadas",
-            ]
-          })
-        }}
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Pranta Das",
+              jobTitle: "Web Developer",
+              description:
+                "Web Developer specializing in React, Next.js, and frontend development.",
+              url: `${process.env.NEXT_PUBLIC_SITE_URL}/projects/${slug}`,
+              image: `${process.env.NEXT_PUBLIC_SITE_URL}/assests/home-page.png`,
+              sameAs: [
+                "https://www.linkedin.com/in/prantadas",
+                "https://www.github.com/prantadas",
+              ],
+            }),
+          }}
         />
       </Head>
       <div className="max-w-3xl mx-auto">
@@ -60,7 +62,6 @@ export default async function Project({ params }: Props) {
           <h1 className="font-bold lg:text-5xl text-3xl lg:leading-tight mb-4">
             {project.name}
           </h1>
-
           <a
             href={project.projectUrl}
             rel="noreferrer noopener"
@@ -74,7 +75,7 @@ export default async function Project({ params }: Props) {
           className="rounded-xl border border-zinc-800"
           width={900}
           height={460}
-          src={project.coverImage?.image || fallBackImage.src} // Use fallback image
+          src={project.coverImage?.image || fallBackImage.src}
           alt={project.coverImage?.alt || project.name}
         />
 
