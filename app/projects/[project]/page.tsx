@@ -7,10 +7,9 @@ import fallBackImage from "@/public/project.jpg";
 import Head from "next/head";
 
 type Props = {
-  params: {
-    project: string;
-  };
+  params: Record<string, string>;
 };
+
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -31,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function Project({ params }: Props) {
+  if (!params?.project) return <div>Project not found</div>
   const { project: slug } = params; // Destructure params properly
   const project: ProjectType = await getSingleProject(slug);
 
