@@ -9,6 +9,8 @@ import {
   } from "react-icons/fa6";
   import { FaMapMarkerAlt } from "react-icons/fa";
   import { useForm, Resolver } from "react-hook-form";
+  import { FieldErrors } from "react-hook-form";
+
   
   type formValues = {
     name: string;
@@ -17,7 +19,7 @@ import {
   };
   
   const resolver: Resolver<formValues> = async (values) => {
-    const errors: Record<string, any> = {};
+    const errors: FieldErrors<formValues> = {};
   
     if (!values.name) {
       errors.name = { type: "required", message: "Name is required" };

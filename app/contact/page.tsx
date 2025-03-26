@@ -10,8 +10,8 @@ export const metadata:Metadata = {
   openGraph:{
     title:"Contact Pranta Das-Web Developer",
     description : "Get in touch with Pranta Das, a web developer and designer.",
-    url:"https://prantadas.com/contact",
-    images:[{url:"/pranta-profile.jpg", width:800, height:600, alt:"Pranta Das"}],
+    url:`${process.env.NEXT_PUBLIC_SITE_URL}/contact`,
+    images:[{url:`${process.env.NEXT_PUBLIC_SITE_URL}/assests/home-page.png`, width:800, height:600, alt:"Pranta Das"}],
     type:"profile",
   }
 }
@@ -28,8 +28,8 @@ const pages = () => {
             "name": "Pranta Das",
             "jobTitle": "Web Developer",
             "description": "Web Developer specializing in React, Next.js, and frontend development.",
-            "url": "https://prantadas.com",
-            "image": "https://prantadas.com/default-contact.jpg",
+            "url":`${process.env.NEXT_PUBLIC_SITE_URL}/contact`,
+            "image":`${process.env.NEXT_PUBLIC_SITE_URL}/assests/home-page.png`,
             "sameAs": [
               "https://www.linkedin.com/in/prantadas",
               "https://www.github.com/prantadas",

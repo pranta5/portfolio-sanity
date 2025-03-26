@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: project.name,
       description: project.tagline,
       type: "article",
-      url: `https://prantadas.com/projects/${slug}`,
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}/projects/${slug}`,
     },
   };
 }
@@ -45,8 +45,8 @@ export default async function Project({ params }: Props) {
             "name": "Pranta Das",
             "jobTitle": "Web Developer",
             "description": "Web Developer specializing in React, Next.js, and frontend development.",
-            "url": "https://prantadas.com",
-            "image": "https://prantadas.com/default-profile.jpg",
+            "url": `${process.env.NEXT_PUBLIC_SITE_URL}/projects/${slug}`,
+            "image": `${process.env.NEXT_PUBLIC_SITE_URL}/assests/home-page.png`,
             "sameAs": [
               "https://www.linkedin.com/in/prantadas",
               "https://www.github.com/prantadas",

@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Pranta Das-Web Developer",
     description: "Discover the skills and expertise of Pranta Das, a web developer and designer.",
-    url: "https://prantadas.com/about",
-    images: [{ url: "/pranta-profile.jpg", width: 800, height: 600, alt: "Pranta Das" }],
+    url: `${process.env.NEXT_PUBLIC_SITE_URL}`,
+    images: [{ url: `${process.env.NEXT_PUBLIC_SITE_URL}/assests/home-page.png`, width: 800, height: 600, alt: "Pranta Das" }],
     type: "profile",
   },
 }
@@ -36,8 +36,8 @@ export default async function Home() {
             "name": "Pranta Das",
             "jobTitle": "Web Developer",
             "description": "Web Developer specializing in React, Next.js, and frontend development.",
-            "url": "https://prantadas.com",
-            "image": "https://prantadas.com/default-profile.jpg",
+            "url": `${process.env.NEXT_PUBLIC_SITE_URL}`,
+            "image": `${process.env.NEXT_PUBLIC_SITE_URL}/assests/home-page.png`,
             "sameAs": [
               "https://www.linkedin.com/in/prantadas",
               "https://www.github.com/prantadas",
