@@ -1,6 +1,5 @@
 import { getProfile } from "@/sanity/sanity.query";
 import type { ProfileType } from "@/types";
-import Job from "./components/global/Job";
 import Education from "./components/global/Education";
 import { BackgroundLines } from "./components/ui/background-lines";
 import { FlipWords } from "./components/ui/flip-words";
@@ -79,8 +78,6 @@ export default async function Home() {
       </BackgroundLines>
 
       <Education />
-
-      {/* <Job/> */}
     </main>
   );
 }

@@ -6,7 +6,6 @@ import {
     FaXTwitter,
     FaLinkedin,
     FaGithub,
-    FaUser,
   } from "react-icons/fa6";
   import { FaMapMarkerAlt } from "react-icons/fa";
   import { useForm, Resolver } from "react-hook-form";
