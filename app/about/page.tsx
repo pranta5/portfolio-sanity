@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "Frontend Engineer",
   ],
   openGraph: {
-    title: "About Pranta Das-Web Developer",
+    title: "About | Pranta Das-Web Developer",
     description:
       "Discover the skills and expertise of Pranta Das, a web developer and designer.",
     url: `${process.env.NEXT_PUBLIC_SITE_URL}/about`,

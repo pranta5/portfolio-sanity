@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "I'm Pranta Das, a web developer and designer. I live in kolkata, india, where I design the future.",
   keywords: ["Pranta Das", "Web Developer", "Reactjs Developer", "Frontend Engineer"],
   openGraph: {
-    title: "About Pranta Das-Web Developer",
+    title: "Home | Pranta Das-Web Developer",
     description: "Discover the skills and expertise of Pranta Das, a web developer and designer.",
     url: `${process.env.NEXT_PUBLIC_SITE_URL}`,
     images: `${process.env.NEXT_PUBLIC_SITE_URL}/assests/home-page.png`,
