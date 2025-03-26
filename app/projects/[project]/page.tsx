@@ -25,6 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: project.tagline,
       type: "article",
       url: `${process.env.NEXT_PUBLIC_SITE_URL}/projects/${slug}`,
+      
     },
   };
 }
