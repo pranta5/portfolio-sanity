@@ -7,7 +7,7 @@ export default async function Education() {
   console.log(education);
 
   return (
-    <section className="mt-12">
+    <section className="mt-12 px-10">
       <div className="mb-16">
         <h2 className="font-semibold text-4xl mb-4">Education</h2>
       </div>

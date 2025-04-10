@@ -4,6 +4,7 @@ import { getProjects } from "@/sanity/sanity.query";
 import type { ProjectType } from "@/types";
 import { Metadata } from "next";
 import Head from "next/head";
+import ThreeDCardDemo from "../components/threeDCard";
 
 export const metadata: Metadata = {
   title: "Projects | Pranta Das - Web Developer",
@@ -71,24 +72,15 @@ export default async function Project() {
         </p>
       </section>
 
-      <section className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mb-12">
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-20 mb-12">
         {projects.map((project) => (
           <Link href={`/projects/${project.slug}`} key={project._id}>
-            <div className=" grid grid-cols-1 md:grid-cols-2 gap-x-2 items-center rounded-lg p-2 bg-zinc-800 hover:bg-zinc-700 transition duration-500 ease-in-out">
-              <div className="flex justify-center">
-                <Image
-                  src={project.logo}
-                  width={300}
-                  height={120}
-                  alt={project.name}
-                  className="bg-zinc-800 rounded-md p-4"
-                />
-              </div>
-
-              <div className=" flex flex-col gap-1 text-center">
-                <h2 className="font-semibold mb-1">{project.name}</h2>
-                <div className="text-sm text-zinc-400">{project.tagline}</div>
-              </div>
+            <div>
+              <ThreeDCardDemo
+                img={project.logo}
+                name={project.name}
+                tag={project.tagline}
+              />
             </div>
           </Link>
         ))}

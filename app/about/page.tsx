@@ -7,6 +7,7 @@ import { HoverBorderGradient } from "../components/ui/hover-border-gradient";
 import { Button } from "../components/ui/moving-border";
 import { Metadata } from "next";
 import Head from "next/head";
+import TechStack from "../components/TechStack";
 
 export const metadata: Metadata = {
   title: "About | Pranta Das - Web Developer",
@@ -117,19 +118,7 @@ export default async function About() {
                 I&apos;ve spent few years working on my skills. In no particular
                 order, here are a few of them.
               </p>
-
-              <ul className="flex flex-wrap items-center gap-3 mt-8">
-                {data.skills.map((skill, id) => (
-                  <li
-                    key={id}
-                    className="bg-[#1d1d20] border border-transparent hover:border-zinc-700 rounded-md "
-                  >
-                    <Button borderRadius="0.5rem" duration={16000}>
-                      {skill}
-                    </Button>
-                  </li>
-                ))}
-              </ul>
+            <TechStack/>
             </section>
           </div>
         ))}
