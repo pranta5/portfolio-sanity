@@ -4,7 +4,6 @@ import type { ProfileType } from "@/types";
 import { PortableText } from "@portabletext/react";
 import { BiEnvelope, BiFile } from "react-icons/bi";
 import { HoverBorderGradient } from "../components/ui/hover-border-gradient";
-import { Button } from "../components/ui/moving-border";
 import { Metadata } from "next";
 import Head from "next/head";
 import TechStack from "../components/TechStack";
