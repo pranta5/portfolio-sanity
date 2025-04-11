@@ -10,6 +10,7 @@ import {
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { useForm, Resolver } from "react-hook-form";
 import { FieldErrors } from "react-hook-form";
+import Link from "next/link";
 
 type formValues = {
   name: string;
@@ -55,40 +56,36 @@ const ContactComp = () => {
             <FaMapMarkerAlt size={24} />
             <div>
               <h3 className="font-semibold">Address :</h3>
-              <p> Kolkata,West bengal,India</p>
+              <p> Kolkata,West Bengal,India</p>
             </div>
           </div>
           <div className="flex gap-6 mb-6">
             <FaPhone size={24} />
             <div>
               <h3 className="font-semibold">CONTACT NUMBER:</h3>
-              <p>+1234321321</p>
+              <p>+917699273357</p>
             </div>
           </div>
           <div className="flex items-start gap-6 mb-8">
             <FaEnvelope size={24} />
             <div>
               <h3 className="font-semibold">EMAIL US:</h3>
-              <p>websitename@mail.com</p>
+              <p>prantadas01@mail.com</p>
             </div>
           </div>
-          <div className="flex gap-4 mt-6">
-            <FaFacebook
-              size={28}
-              className="cursor-pointer hover:text-blue-600"
-            />
-            <FaXTwitter
-              size={28}
-              className="cursor-pointer hover:text-gray-500"
-            />
-            <FaLinkedin
-              size={28}
-              className="cursor-pointer hover:text-blue-500"
-            />
-            <FaGithub
-              size={28}
-              className="cursor-pointer hover:text-gray-500"
-            />
+          <div className="flex justify-evenly mt-6">
+            <Link href={'https://www.linkedin.com/in/pranta5/'}>
+              <FaLinkedin
+                size={28}
+                className="cursor-pointer hover:text-blue-500"
+              />
+            </Link>
+            <Link href={'https://github.com/pranta5'}>
+              <FaGithub
+                size={28}
+                className="cursor-pointer hover:text-gray-500"
+              />
+            </Link>
           </div>
         </div>
         <div>
