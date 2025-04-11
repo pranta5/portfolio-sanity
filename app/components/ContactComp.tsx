@@ -2,8 +2,6 @@
 import {
   FaPhone,
   FaEnvelope,
-  FaFacebook,
-  FaXTwitter,
   FaLinkedin,
   FaGithub,
 } from "react-icons/fa6";
